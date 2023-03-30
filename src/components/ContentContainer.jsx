@@ -1,3 +1,5 @@
+import Container  from "react-bootstrap/Container"
+
 export default function ContentContainer({children}){
-    return <div style={{ padding: 10, maxWidth: 1280}}>{children}</div>
+    return <Container fluid="md" style={{maxWidth: 1280}}>{children}</Container>
 }
