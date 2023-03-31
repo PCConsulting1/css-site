@@ -5,10 +5,9 @@ export default function Services() {
   return services.map((service) => (
     <Service
       key={service.title}
+      icon={service.icon}
       title={service.title}
       description={service.description}
-      bullets={service.bullets}
-      price={service.price}
     />
   ))
 }
