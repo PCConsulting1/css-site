@@ -10,7 +10,6 @@ import ListContainer from '../components/ListContainer.component'
 function Home() {
   return (
     <>
-      <h1>Home Page</h1>
       <ListContainer>
         <PricingPlans />
       </ListContainer>
