@@ -3,7 +3,7 @@ Prices/Plans component
 Testimonial component 
 Brief overview component
 */
-import PricingPlans from '../components/PricingPlans.component'
+import PricingPlans from '../components/membership plans/PricingPlans.component'
 
 function Home() {
   return (

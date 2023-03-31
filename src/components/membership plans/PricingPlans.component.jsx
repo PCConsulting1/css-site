@@ -1,7 +1,7 @@
 import Container from '@mui/material/Container'
 
 import Plan from './PlanCard.component'
-import plans from '../data/pricePlans.data'
+import plans from '../../data/pricePlans.data'
 
 export default function PricingPlans() {
   return (
