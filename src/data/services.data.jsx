@@ -1,21 +1,21 @@
-import ComputerTwoToneIcon from '@mui/icons-material/ComputerTwoTone'
+import ScreenSearchDesktopTwoToneIcon from '@mui/icons-material/ScreenSearchDesktopTwoTone'
 import PaidTwoToneIcon from '@mui/icons-material/PaidTwoTone'
 import ContactSupportTwoToneIcon from '@mui/icons-material/ContactSupportTwoTone'
 
 const services = [
   {
-    icon: <ComputerTwoToneIcon sx={{ fontSize: 90 }} />,
-    title: 'Online form submission',
+    icon: <ScreenSearchDesktopTwoToneIcon sx={{ fontSize: 80 }} />,
+    title: 'Precise and accurate',
     description: 'Lorem ipsum dolor sit amet',
   },
   {
-    icon: <PaidTwoToneIcon sx={{ fontSize: 90 }} />,
-    title: 'Save Money',
+    icon: <PaidTwoToneIcon sx={{ fontSize: 100 }} />,
+    title: 'Clear and affordable prices',
     description: 'Lorem ipsum dolor sit',
   },
   {
-    icon: <ContactSupportTwoToneIcon sx={{ fontSize: 90 }} />,
-    title: 'Ask us your questions',
+    icon: <ContactSupportTwoToneIcon sx={{ fontSize: 95 }} />,
+    title: 'Expert help',
     description: 'Lorem ipsum',
   },
 ]
