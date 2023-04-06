@@ -3,6 +3,10 @@ import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 
+/**
+ * !important button with modal to check if college requires CSS Profile
+ *
+ */
 export default function WelcomeBanner() {
   return (
     <Container fluid sx={{ paddingTop: 15, paddingBottom: 15 }}>
