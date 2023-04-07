@@ -4,46 +4,12 @@ import { useForm } from 'react-hook-form'
 /**
  * List of colleges
  * a. On/Off Campus
- * Phone number for student and parents
- * Email for student and parents
- * Student information:
- * 1. Last Name
- * 2. First Name
- * 3. Middle Initial
- * 4. Permanent Address
- * 5. City
- * 6. State
- * 7. Zip Code
- * 8. Date of Birth
- * 9. Phone Number
- * 10. Email Address
- * 11. Citizenship Status
- * 12. Eligible non-citizen
- * 13. Alien registration #
- * 14. Marital Status
- * 15. Month/Year married
- * 16. Become resident of state 5 years ago
- * 17. If no, what year
- * 18. Highest grade completed by father
- * 19. Highest grade completed by mother
- * 20. When you start college, high school status will be?
- * 21. Name of high school where you received diploma
- * 22. city state of high school
- * 23. Will you have your first bachelor's degree before July 1, 2023
- * 24. What is students grade level in 2023-2024 academic year?
- * 25. When you begin college what degree will you be working on?
- * 26. Are you interested in work study?
- * 27. Have parents filed IRS Tax return? already filed, will file, will not file
- * 28. What form will be filed? IRS 1040, foreign return, us territorial return,
- * 29. Did you file schedule 1, schedule 2, schedule 3?
- * 30. Is either parent a dislocated worker?
- * 31. Need all tax forms
- * 32. Non-retirement asset information
  */
 
 import TextInput from '../components/form/TextInput.component'
 import EmailInput from '../components/form/Emailinput.component'
 import SelectInput from '../components/form/SelectInput.component'
+import CheckboxInput from '../components/form/CheckboxInput.component'
 
 export default function CSSForm() {
   const { register, handleSubmit, control } = useForm({
@@ -70,33 +36,38 @@ export default function CSSForm() {
       <SelectInput
         name="Citizenship status"
         control={control}
-        label="test"
-        options={['one', 'two', 'three']}
+        options={['U.S. citizen', 'U.S. eligible noncitizen', 'Other']}
       />
-      <label htmlFor="field-citizen">
-        <input
-          {...register('Citizenship status')}
-          type="radio"
-          value="U.S. Citizen"
-          id="field-citizen"
-        />
-        U.S. Citizen
-      </label>
-      <label htmlFor="field-citizen">
-        <input
-          {...register('Citizenship status')}
-          type="radio"
-          value="U.S eligible non-citizen"
-          id="field-non-citizen"
-        />
-        U.S eligible non-citizen
-      </label>
-      <input type="checkbox" {...register('studentHasDependants')} />
-      <input type="checkbox" {...register('studentIsVeteran')} />
-      <input type="checkbox" {...register('studentIsemancipatedMinor')} />
-      <input type="checkbox" {...register('studentIshomeless')} />
-      <input type="checkbox" {...register('studentWasWardOfCourt')} />
-      <input type="checkbox" {...register('studentWasFosterCare')} />
+      <CheckboxInput
+        name="studentHasDependents"
+        control={control}
+        label="Student has legal dependents"
+      />
+      <CheckboxInput
+        name="studentIsVeteran"
+        control={control}
+        label="Student is a veteran or currently serving on active duty"
+      />
+      <CheckboxInput
+        name="studentIsEmancipatedMinor"
+        control={control}
+        label="Student was determined to be an emancipated minor by a court in their state"
+      />
+      <CheckboxInput
+        name="studentIshomeless"
+        control={control}
+        label="Student is homeless or at risk of becoming homeless"
+      />
+      <CheckboxInput
+        name="studentWasWardOfCourt"
+        control={control}
+        label="Student was a ward of the court"
+      />
+      <CheckboxInput
+        name="studentWasFosterCare"
+        control={control}
+        label="Student was in foster care"
+      />
       <select {...register('gender')}>
         <option value="female">female</option>
         <option value="male">male</option>
