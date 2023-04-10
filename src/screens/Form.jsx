@@ -11,7 +11,6 @@ import TextInput from '../components/form/TextInput.component'
 import EmailInput from '../components/form/Emailinput.component'
 import SelectInput from '../components/form/SelectInput.component'
 import CheckboxInput from '../components/form/CheckboxInput.component'
-import TelephoneInput from '../components/form/TelInput.component'
 import DateInput from '../components/form/DateInput.component'
 import PhoneInput from '../components/form/PhoneInput.component'
 
@@ -37,10 +36,15 @@ export default function CSSForm() {
       }}
     >
       <TextInput name="firstName" control={control} label="First Name" />
-      <TextInput name="middleName" control={control} label="Middle Name" />
+      <TextInput
+        name="middleName"
+        control={control}
+        label="Middle Name"
+        isRequired={false}
+      />
       <TextInput name="lastName" control={control} label="Last Name" />
-      <TelephoneInput name="bestContactPhone" control={control} label="Phone" />
       <EmailInput name="bestContactEmail" control={control} label="Email" />
+      <PhoneInput name="studentPhone" control={control} label="Phone Number" />
       <DateInput
         name="studentDateOfBirth"
         control={control}
@@ -117,7 +121,7 @@ export default function CSSForm() {
         control={control}
         label="Social Security Number"
       />
-      <PhoneInput name="studentPhone" control={control} label="Phone Number" />
+
       <input type="submit" />
     </form>
   )

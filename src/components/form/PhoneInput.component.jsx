@@ -24,7 +24,10 @@ export default function PhoneInput({ name, control, label }) {
       name={name}
       control={control}
       defaultValue=""
-      rules={{ minLength: { value: 10, message: 'Required Field' } }}
+      rules={{
+        required: 'Required Field',
+        minLength: { value: 14, message: 'Invalid Number' },
+      }}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <TextField
           label={label}
