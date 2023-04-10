@@ -1,8 +1,8 @@
-import TextField from '@mui/material/TextField'
 import { Controller } from 'react-hook-form'
 import PropTypes from 'prop-types'
+import { MuiTelInput } from 'mui-tel-input'
 
-export default function EmailInput({ name, control, label }) {
+export default function TelephoneInput({ name, control, label }) {
   return (
     <Controller
       name={name}
@@ -10,25 +10,25 @@ export default function EmailInput({ name, control, label }) {
       defaultValue=""
       rules={{
         required: 'Required Field',
-        pattern: {
-          value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/gi,
-          message: 'Invalid Email',
-        },
+        maxLength: { value: 10, message: 'Invalid Phone Number' },
       }}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
-        <TextField
-          label={label}
+        <MuiTelInput
+          forceCallingCode
+          disableDropdown
           value={value}
           onChange={onChange}
           error={!!error}
           helperText={error ? error.message : null}
-          sx={{ width: 250 }}
+          defaultCountry="US"
+          label={label}
+          style={{ width: 250 }}
         />
       )}
     />
   )
 }
-EmailInput.propTypes = {
+TelephoneInput.propTypes = {
   name: PropTypes.string.isRequired,
   control: PropTypes.objectOf(PropTypes.any).isRequired,
   label: PropTypes.string.isRequired,

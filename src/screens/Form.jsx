@@ -10,9 +10,11 @@ import TextInput from '../components/form/TextInput.component'
 import EmailInput from '../components/form/Emailinput.component'
 import SelectInput from '../components/form/SelectInput.component'
 import CheckboxInput from '../components/form/CheckboxInput.component'
+import TelephoneInput from '../components/form/TelInput.component'
+import DateInput from '../components/form/DateInput.component'
 
 export default function CSSForm() {
-  const { register, handleSubmit, control } = useForm({
+  const { handleSubmit, control } = useForm({
     mode: 'onChange',
     validateCriteriaMode: 'all',
   })
@@ -21,13 +23,22 @@ export default function CSSForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ paddingTop: 20 }}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      style={{
+        paddingTop: 20,
+        display: 'flex',
+        justifyContent: 'space-around',
+        rowGap: 15,
+        flexWrap: 'wrap',
+        maxWidth: '100vw',
+      }}
+    >
       <TextInput name="firstName" control={control} label="First Name" />
       <TextInput name="middleName" control={control} label="Middle Name" />
       <TextInput name="lastName" control={control} label="Last Name" />
-      <TextInput name="bestContactPhone" control={control} label="Phone" />
+      <TelephoneInput name="bestContactPhone" control={control} label="Phone" />
       <EmailInput name="bestContactEmail" control={control} label="Email" />
-      <TextInput name="dateOfBirth" control={control} label="Date of Birth" />
       <TextInput
         name="maritalStatus"
         control={control}
@@ -68,11 +79,11 @@ export default function CSSForm() {
         control={control}
         label="Student was in foster care"
       />
-      <select {...register('gender')}>
-        <option value="female">female</option>
-        <option value="male">male</option>
-        <option value="other">other</option>
-      </select>
+      <DateInput
+        name="studentDateOfBirth"
+        control={control}
+        label="Date of Birth"
+      />
       <input type="submit" />
     </form>
   )

@@ -21,7 +21,7 @@ export default function SelectInput({ name, control, options }) {
             displayEmpty
             onChange={onChange}
             error={!!error}
-            sx={{ margin: 1, width: 225 }}
+            sx={{ width: 250 }}
           >
             <MenuItem value="" disabled>
               CitizenShip Status

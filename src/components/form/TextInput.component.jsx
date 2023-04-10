@@ -17,7 +17,7 @@ export default function TextInput({ name, control, label }) {
           onChange={onChange}
           error={!!error}
           helperText={error ? error.message : null}
-          sx={{ margin: 1 }}
+          sx={{ width: 250 }}
         />
       )}
     />
