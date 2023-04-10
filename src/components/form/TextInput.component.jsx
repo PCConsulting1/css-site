@@ -1,6 +1,6 @@
-import TextField from '@mui/material/TextField'
 import { Controller } from 'react-hook-form'
 import PropTypes from 'prop-types'
+import TextField from '@mui/material/TextField'
 
 export default function TextInput({ name, control, label }) {
   return (
@@ -12,7 +12,6 @@ export default function TextInput({ name, control, label }) {
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <TextField
           label={label}
-          variant="outlined"
           value={value}
           onChange={onChange}
           error={!!error}

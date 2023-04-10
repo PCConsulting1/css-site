@@ -2,6 +2,11 @@ import { Controller } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import { MuiTelInput } from 'mui-tel-input'
 
+/**
+ * If phone number starts with 1-800 change formatting
+ * Add parenthesis formatting as user types
+ */
+
 export default function TelephoneInput({ name, control, label }) {
   return (
     <Controller
@@ -10,7 +15,7 @@ export default function TelephoneInput({ name, control, label }) {
       defaultValue=""
       rules={{
         required: 'Required Field',
-        maxLength: { value: 10, message: 'Invalid Phone Number' },
+        maxLength: { value: 20, message: 'Invalid Phone Number' },
       }}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <MuiTelInput
