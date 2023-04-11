@@ -1,19 +1,17 @@
-import Home from './screens/Home'
-import NavBar from './components/Navbar'
-import ContentContainer from './components/ContentContainer'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
-import './App.css'
+// import Home from './screens/Home'
+import Navbar from './components/Navbar.component'
+
+import CSSForm from './screens/Form'
 
 function App() {
-  
   return (
-    <>
-    <NavBar />
-    <ContentContainer >
-    <Home />
-    </ContentContainer>
-    </>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Navbar />
+      <CSSForm />
+    </LocalizationProvider>
   )
 }
-
 export default App

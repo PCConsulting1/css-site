@@ -1,7 +1,20 @@
-import CustomAlert from "../components/Alert";
+/*
+Prices/Plans component
+Testimonial component 
+Brief overview component
+*/
+import PricingPlans from '../components/membership plans/PricingPlans'
+import Services from '../components/services/Services.component'
+import WelcomeBanner from '../components/Welcome.component'
 
-const Home = () => {
-    return <CustomAlert variant={"success"} message={"Form Submitted"}/>
+function Home() {
+  return (
+    <>
+      <WelcomeBanner />
+      <PricingPlans />
+      <Services />
+    </>
+  )
 }
 
-export default Home;
+export default Home
